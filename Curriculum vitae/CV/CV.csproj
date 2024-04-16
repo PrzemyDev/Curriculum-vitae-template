@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="icons\**" />
+    <EmbeddedResource Remove="icons\**" />
+    <None Remove="icons\**" />
+    <Page Remove="icons\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\icons\GitHubWhite.png" />
+    <None Remove="Resources\icons\githubWhitePixelPerfectFlaticon.png" />
+    <None Remove="Resources\icons\mailWhite.png" />
+    <None Remove="Resources\icons\manVectorsMarketFlaticon.png" />
+    <None Remove="Resources\icons\phoneWhite.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\icons\githubWhitePixelPerfectFlaticon.png" />
+    <Resource Include="Resources\icons\mailWhite.png" />
+    <Resource Include="Resources\icons\manVectorsMarketFlaticon.png" />
+    <Resource Include="Resources\icons\phoneWhite.png" />
+  </ItemGroup>
+
+</Project>
