@@ -1,3 +1,4 @@
+<H1>Szablon CV</H1>
 Szablon Cv, który pozwala na zapisanie do pliku PDF oraz wydruk.</br>
 Instrukcja:</br>
 Po uruchomnienu należy kliknąć w zdjęcie, aby wyświetlić opcję drukowania.
