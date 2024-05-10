@@ -17,6 +17,7 @@
   <ItemGroup>
     <None Remove="Resources\icons\GitHubWhite.png" />
     <None Remove="Resources\icons\githubWhitePixelPerfectFlaticon.png" />
+    <None Remove="Resources\icons\linkedin.png" />
     <None Remove="Resources\icons\mailWhite.png" />
     <None Remove="Resources\icons\manVectorsMarketFlaticon.png" />
     <None Remove="Resources\icons\phoneWhite.png" />
@@ -24,6 +25,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\icons\githubWhitePixelPerfectFlaticon.png" />
+    <Resource Include="Resources\icons\linkedin.png" />
     <Resource Include="Resources\icons\mailWhite.png" />
     <Resource Include="Resources\icons\manVectorsMarketFlaticon.png" />
     <Resource Include="Resources\icons\phoneWhite.png" />
