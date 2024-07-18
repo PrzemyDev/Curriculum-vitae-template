@@ -38,33 +38,34 @@
             </Style>
         </ResourceDictionary>
     </Window.Resources>
-    <Grid Background="#454545">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="25"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Border BorderBrush="Gold" BorderThickness="2" CornerRadius="1">
+        <Grid Background="#454545">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="btnPin" Content="&#128204;" Click="btnPin_Click"
-                        Margin="0,-2,0,0" FontSize="10"
-                        Style="{StaticResource functionButtons}"/>
-                <Button x:Name="btnCloseControls" Content="X" Click="btnCloseControls_Click"
-                        Style="{StaticResource functionButtons}"/>
-            </StackPanel>
-                
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnPin" Content="&#128204;" Click="btnPin_Click"
+                     Margin="0,-2,0,0" FontSize="10"
+                     Style="{StaticResource functionButtons}"/>
+                    <Button x:Name="btnCloseControls" Content="X" Click="btnCloseControls_Click"
+                     Style="{StaticResource functionButtons}"/>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Center" 
+                 HorizontalAlignment="Center">
+                    <Label Content="Zarządzaj CV" Style="{StaticResource controlPanelLabel}"/>
+                    <Button x:Name="btnClose" Content="Zamknij" Click="btnClose_Click"
+                     Style="{StaticResource controlPanelButtons}"/>
+                    <Button x:Name="btnFixSize"  Content="Reset pozycji" Click="btnFixSize_Click"
+                     Style="{StaticResource controlPanelButtons}"/>
+                    <Button x:Name="btnReopen" Content="Otwórz" Click="btnReopen_Click"
+                     Style="{StaticResource controlPanelButtons}"/>
+                </StackPanel>
+            </Grid>
         </Grid>
-        <Grid Grid.Row="1">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center" 
-                    HorizontalAlignment="Center">
-                <Label Content="Zarządzaj CV" Style="{StaticResource controlPanelLabel}"/>
-                <Button x:Name="btnClose" Content="Zamknij" Click="btnClose_Click"
-                        Style="{StaticResource controlPanelButtons}"/>
-                <Button x:Name="btnFixSize"  Content="Reset pozycji" Click="btnFixSize_Click"
-                        Style="{StaticResource controlPanelButtons}"/>
-                <Button x:Name="btnReopen" Content="Otwórz" Click="btnReopen_Click"
-                        Style="{StaticResource controlPanelButtons}"/>
-            </StackPanel>
-        </Grid>
-    </Grid>
+    </Border>
 </Window>
