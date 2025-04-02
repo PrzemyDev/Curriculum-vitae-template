@@ -64,6 +64,13 @@
                 <Setter Property="FontSize" Value="30" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
             </Style>
+            <Style x:Key="labelDateRange" TargetType="Label">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontWeight" Value="DemiBold" />
+                <Setter Property="FontSize" Value="15.5" />
+                <Setter Property="Margin" Value="0,-5" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+            </Style>
         </ResourceDictionary>
     </Window.Resources>
     <Grid MouseDown="Border_MouseDown">
@@ -272,7 +279,7 @@
             <!--Doświadczenie-->
             <Grid Grid.Row="1">
                 <Label Content="Doświadczenie"
-                           Style="{StaticResource RightLabelDivider}"/>
+                    Style="{StaticResource RightLabelDivider}"/>
             </Grid>
 
             <Grid Grid.Row="2" Margin="3">
@@ -289,8 +296,7 @@
                 <Border Grid.Column="0" BorderThickness="1"
                 BorderBrush="black" >
                     <Label Content="01.2023 - 04.2024"
-                       HorizontalAlignment="Center"
-                       FontSize="16" FontWeight="Bold" />
+                       Style="{StaticResource labelDateRange}" />
                 </Border>
                 <Border Grid.Column="1" BorderThickness="1"
                 BorderBrush="Black" >
@@ -299,14 +305,15 @@
                    Style="{StaticResource textBlockLabelHeaders}"/>
                         <TextBlock Text="Starszy programista"
                             Style="{StaticResource textBlockLabelDescription}" />
+                        <TextBlock Text="• Projektowanie i wdrażanie podsystemów gier i symulacji &#x0a;• Utrzymanie i refaktoryzacja istniejącej bazy kodu &#x0a;• Wykonywanie małych optymalizacji &#x0a;• Debugowanie i naprawianie błędów &#x0a;• Współpraca w procesie planowania i szacowania"
+        Style="{StaticResource textBlockLabelDescription}" />
                     </StackPanel>
                 </Border>
 
                 <Border Grid.Column="0" BorderThickness="1"
-                    BorderBrush="black" Grid.Row="1">
-                                <Label Content="01.2020 - 11.2022"
-                       HorizontalAlignment="Center"
-                       FontSize="16" FontWeight="Bold" />
+                        BorderBrush="black" Grid.Row="1">
+                       <Label Content="01.2020 - 11.2022"
+                       Style="{StaticResource labelDateRange}" />
                 </Border>
                 <Border Grid.Column="1" BorderThickness="1"
                     BorderBrush="Black" Grid.Row="1">
@@ -315,14 +322,15 @@
                        Style="{StaticResource textBlockLabelHeaders}"/>
                                     <TextBlock Text="Młodszy programista"
                         Style="{StaticResource textBlockLabelDescription}"/>
+                        <TextBlock Text="• Debugowanie i naprawianie błędów &#x0a;• Implementacja Animacji i fizyki&#x0a;• Współpraca z zespołem QA"
+Style="{StaticResource textBlockLabelDescription}" />
                     </StackPanel>
                 </Border>
 
                 <Border Grid.Column="0" BorderThickness="1"
                         BorderBrush="black" Grid.Row="2">
                     <Label Content="01.2019 - 12.2019"
-                           HorizontalAlignment="Center"
-                           FontSize="16" FontWeight="Bold" />
+                           Style="{StaticResource labelDateRange}" />
                 </Border>
                 <Border Grid.Column="1" BorderThickness="1"
                         BorderBrush="Black" Grid.Row="2">
@@ -355,8 +363,7 @@
                 <Border Grid.Column="0" BorderThickness="1"
                         BorderBrush="black">
                     <Label Content="xx.xxxx - xx.xxxx"
-                           HorizontalAlignment="Center"
-                           FontSize="16" FontWeight="Bold" />
+                           Style="{StaticResource labelDateRange}" />
                 </Border>
 
                 <Border Grid.Column="1" BorderThickness="1"
@@ -373,8 +380,7 @@
                         BorderThickness="1"
                         BorderBrush="Black">
                     <Label Content="xx.xxxx - xx.xxxx" 
-                           HorizontalAlignment="Center"
-                           FontSize="16" FontWeight="Bold"/>
+                           Style="{StaticResource labelDateRange}"/>
                 </Border>
 
                 <Border Grid.Column="1" Grid.Row="1"
@@ -392,8 +398,7 @@
                         BorderThickness="1"
                         BorderBrush="Black">
                     <Label Content="xx.xxxx - xx.xxxx"
-                           HorizontalAlignment="Center"
-                           FontSize="16" FontWeight="Bold"/>
+                           Style="{StaticResource labelDateRange}"/>
                 </Border>
                 <Border Grid.Column="1" Grid.Row="2"
                         BorderThickness="1"
@@ -437,7 +442,7 @@
                     <TextBlock FontSize="14"
                                TextWrapping="Wrap"
                                Margin="10"
-                        Text="• GameDev" />
+                        Text="• GameDev i wszelkie nowinki technologiczne" />
                 </StackPanel>
             </Grid>
             
