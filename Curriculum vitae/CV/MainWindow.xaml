@@ -11,44 +11,117 @@
     <!--"NoResize" depends on screen size, current size is equal to A4 format Height="1123" Width="794"-->
     <Window.Resources>
         <ResourceDictionary>
+            <ControlTemplate x:Key="SkillRatingTemplate" TargetType="ContentControl">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0"
+                   Text="{TemplateBinding Content}"
+                   Foreground="White"
+                   FontSize="13"
+                   VerticalAlignment="Center"
+                   Margin="0,0,10,0" />
+                    <StackPanel Grid.Column="1" Margin="0,0,3,0"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+                        <Ellipse x:Name="Dot1" Width="8" Height="8" Fill="#353535" Margin="1.5"/>
+                        <Ellipse x:Name="Dot2" Width="8" Height="8" Fill="#353535" Margin="1.5"/>
+                        <Ellipse x:Name="Dot3" Width="8" Height="8" Fill="#353535" Margin="1.5"/>
+                        <Ellipse x:Name="Dot4" Width="8" Height="8" Fill="#353535" Margin="1.5"/>
+                        <Ellipse x:Name="Dot5" Width="8" Height="8" Fill="#353535" Margin="1.5"/>
+                    </StackPanel>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <Trigger Property="Tag" Value="1">
+                        <Setter TargetName="Dot1" Property="Fill" Value="White"/>
+                    </Trigger>
+                    <Trigger Property="Tag" Value="2">
+                        <Setter TargetName="Dot1" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot2" Property="Fill" Value="White"/>
+                    </Trigger>
+                    <Trigger Property="Tag" Value="3">
+                        <Setter TargetName="Dot1" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot2" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot3" Property="Fill" Value="White"/>
+                    </Trigger>
+                    <Trigger Property="Tag" Value="4">
+                        <Setter TargetName="Dot1" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot2" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot3" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot4" Property="Fill" Value="White"/>
+                    </Trigger>
+                    <Trigger Property="Tag" Value="5">
+                        <Setter TargetName="Dot1" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot2" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot3" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot4" Property="Fill" Value="White"/>
+                        <Setter TargetName="Dot5" Property="Fill" Value="White"/>
+                    </Trigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+
+            <Style x:Key="RightLabelDivider" TargetType="Label">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontSize" Value="25" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="Padding" Value="0 0 0 2" />
+            </Style>
+            <Style x:Key="labelDateRange" TargetType="Label">
+                <Setter Property="Foreground" Value="Black" />
+                <Setter Property="FontWeight" Value="DemiBold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="0,-5" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+            </Style>
             <Style x:Key="textBlockLabelHeaders" TargetType="TextBlock">
                 <Setter Property="Padding" Value="7,0" />
                 <Setter Property="FontSize" Value="16" />
                 <Setter Property="FontWeight" Value="Bold" />
-                <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="TextWrapping" Value="Wrap" />
             </Style>
-            <Style x:Key="textBlockLabelDescription" TargetType="TextBlock">
+            <Style x:Key="textBlockLabelSubheader" TargetType="TextBlock">
                 <Setter Property="Padding" Value="7,1" />
                 <Setter Property="FontSize" Value="14" />
                 <Setter Property="TextWrapping" Value="Wrap"/>
+                <Setter Property="FontWeight" Value="DemiBold" />
+            </Style>
+            <Style x:Key="textBlockLabelDescription" TargetType="TextBlock">
+                <Setter Property="Padding" Value="7,2" />
+                <Setter Property="Margin" Value="5 0"/>
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="TextWrapping" Value="Wrap"/>
             </Style>
             <Style x:Key="tblockCert" TargetType="TextBlock">
-                <Setter Property="Margin" Value="5,1" />
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="Margin" Value="5,0" />
+                <Setter Property="FontSize" Value="12" />
                 <Setter Property="TextWrapping" Value="Wrap"/>
             </Style>
             <Style x:Key="BordHeaderDividers" TargetType="Border">
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="HorizontalAlignment" Value="Stretch" />
                 <Setter Property="BorderBrush" Value="Black"/>
-                <Setter Property="BorderThickness" Value="0 0 0 2"/>
+                <Setter Property="BorderThickness" Value="0 0 0 1"/>
+            </Style>
+            <Style x:Key="LeftSideStackPanelDetails" TargetType="StackPanel">
+                <Setter Property="Margin" Value="2"/>
             </Style>
             <Style x:Key="LeftColumnItems" TargetType="Label">
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="HorizontalAlignment" Value="Left" />
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="FontWeight" Value="Bold" />
-                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontSize" Value="13" />
             </Style>
             <Style x:Key="LeftColumnDetails" TargetType="Label">
                 <Setter Property="VerticalAlignment" Value="Center" />
-                <Setter Property="HorizontalAlignment" Value="Left" />
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="FontSize" Value="16" />
+                <Setter Property="FontSize" Value="13" />
             </Style>
             <Style x:Key="LeftLabelDivider" TargetType="Label">
                 <Setter Property="Foreground" Value="White" />
-                <Setter Property="FontSize" Value="30" />
+                <Setter Property="FontSize" Value="25" />
                 <Setter Property="HorizontalAlignment" Value="Center" />
                 <Setter Property="Padding" Value="0 0 0 5" />
             </Style>
@@ -56,302 +129,306 @@
                 <Setter Property="Background" Value="#353535" />
                 <Setter Property="VerticalAlignment" Value="Center" />
                 <Setter Property="HorizontalAlignment" Value="Stretch" />
-                <Setter Property="BorderBrush" Value="#252525" />
-                <Setter Property="BorderThickness" Value="2" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="0 0 0 0" />
             </Style>
-            <Style x:Key="RightLabelDivider" TargetType="Label">
-                <Setter Property="Foreground" Value="Black" />
-                <Setter Property="FontSize" Value="30" />
-                <Setter Property="HorizontalAlignment" Value="Center" />
-            </Style>
-            <Style x:Key="labelDateRange" TargetType="Label">
-                <Setter Property="Foreground" Value="Black" />
-                <Setter Property="FontWeight" Value="DemiBold" />
-                <Setter Property="FontSize" Value="15.5" />
-                <Setter Property="Margin" Value="0,-5" />
-                <Setter Property="HorizontalAlignment" Value="Center" />
-            </Style>
+
         </ResourceDictionary>
     </Window.Resources>
     <Grid MouseDown="Border_MouseDown">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <!--Lewa Kolumna-->
-        <Grid Grid.Column="0" 
-                Background="#202020" >
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition/>
-                <RowDefinition Height="50"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="#202020">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <Border Background="#353535" CornerRadius="20"
-                    Width="200" Height="200"
+            <Grid Grid.Column="0">
+                <Border Background="#353535" CornerRadius="10"
+                    Width="210" Height="200"
                     BorderBrush="#303030"
                     BorderThickness="2.5">
-                <Image Source="Resources/icons/manVectorsMarketFlaticon.png"
-                       Opacity="0.8"
-                       MouseDown="Image_MouseDown"/>
-            </Border>
-            <!--Kontakt-->
-            <Grid Grid.Row="1">
+                    <Image Source="/Resources/icons/manVectorsMarketFlaticon.png"
+                       Opacity="1"
+                       MouseDown="Image_MouseDown"
+                       Height="260" />
+                </Border>
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <StackPanel>
+                    <Label Foreground="White" FontSize="35"
+                        Content="Jan Kowalski"
+                        HorizontalAlignment="Center"/>
+                    <Canvas>
+                        <Rectangle Fill="White" 
+                            Height="2"
+                            Width="524"
+                            Margin="10 0"
+                            />
+                    </Canvas>
+                    <TextBlock Foreground="White" FontSize="15.4"
+                         TextWrapping="Wrap" Margin="10" TextAlignment="Justify"
+                         Text="orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages."/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="0" Grid.Row="1" Background="#202020">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="130"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
                 <Border  Style="{StaticResource LeftBorderDivider}">
                     <Label Content="Kontakt"
                    Style="{StaticResource LeftLabelDivider}"/>
                 </Border>
             </Grid>
-            <Grid Grid.Row="2">
-                <StackPanel Margin="20 20">
+            <Grid Grid.Row="1">
+                <StackPanel Style="{StaticResource LeftSideStackPanelDetails}" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <Image Source="Resources/icons/city.png" 
+                            Width="20" Height="20" />
+                        <Label Style="{StaticResource LeftColumnItems}"
+                            Content="Rzeszów"
+                            />
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/icons/phoneWhite.png" 
-                           Width="25" Height="25"/>
-                        <Label Style="{StaticResource LeftColumnItems}"
-                       Content="Telefon"
-                       />
-                    </StackPanel>
-                    <Label Style="{StaticResource LeftColumnDetails}"
+                           Width="20" Height="20"/>
+                        <Label Style="{StaticResource LeftColumnDetails}"
                        Content="111 222 333"/>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/icons/mailWhite.png" 
-                           Width="25" Height="25"/>
-                        <Label Style="{StaticResource LeftColumnItems}"
-                       Content="Email" />
-                    </StackPanel >
-                    <TextBlock VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Foreground="White"
-                       Text="johnyDoe@random.com"
-                       FontSize="16" TextWrapping="Wrap" Margin="5,0,0,5"/>
+                           Width="20" Height="20"/>
+
+                        <TextBlock VerticalAlignment="Center"
+                       Foreground="White" Margin="5,0"
+                       Text="jkow@domena.com"
+                       FontSize="13"  TextWrapping="Wrap"/>
+                    </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/icons/githubWhitePixelPerfectFlaticon.png" 
-                           Width="25" Height="25"/>
-                        <Label Style="{StaticResource LeftColumnItems}"
-                       Content="GitHub"/>
+                           Width="20" Height="20"/>
+
+                        <Label Style="{StaticResource LeftColumnDetails}"
+                       Content="github.com/kwalsky9101" FontSize="13"/>
                     </StackPanel>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="github.com/johnDoDev"/>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/icons/linkedin.png" 
-                          Width="25" Height="25"/>
-                        <Label Style="{StaticResource LeftColumnItems}"
-                        Content="LinkedIn"/>
+                          Width="20" Height="20" />
+                        <TextBlock Foreground="White" Margin="5,0" FontSize="13" TextWrapping="WrapWithOverflow" 
+                       Text="linkedin.com/in/jan-xyz0-kowalski" Width="220"/>
+
+
                     </StackPanel>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="linkedin.johnDoWork"/>
 
                 </StackPanel>
             </Grid>
-            <!--Umiejętności-->
-            <Grid Grid.Row="3">
+            <Grid Grid.Row="2">
                 <Border  Style="{StaticResource LeftBorderDivider}">
                     <Label Content="Umiejętności"
                    Style="{StaticResource LeftLabelDivider}"/>
                 </Border>
             </Grid>
-            <Grid Grid.Row="4">
-                <StackPanel Margin="20 20">
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="C#, C++"/>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="Unity and Unreal 5"/>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="Corel"/>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="Microsoft Office"/>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="Prawo jazdy kat. B"/>
+            <Grid Grid.Row="3">
+                <StackPanel>
+                    <Label Content="🔧 Testowanie" Style="{StaticResource LeftColumnDetails}"
+                           FontWeight="Medium"/>
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Playwright" Tag="2" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Swagger UI" Tag="3" Margin="5" />
+                    <Label Content="💻 Programowanie" Style="{StaticResource LeftColumnDetails}"
+                           FontWeight="Medium"/>
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="C#" Tag="5" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="SQL" Tag="3" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Xamarin Forms, .NET " Tag="3" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Godot" Tag="4" Margin="5" />
+                    <Label Content="🛠️ Narzędzia i inne" Style="{StaticResource LeftColumnDetails}"
+                           FontWeight="Medium"/>
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Microsoft Office" Tag="3" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Kontrola wersji " Tag="3" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Zarządzanie projektami " Tag="3" Margin="5" />
+                    <Label Content="Prawo jazdy kat. B, A2" Style="{StaticResource LeftColumnDetails}"/>
                 </StackPanel>
+
             </Grid>
-            <!--Języki Obce-->
-            <Grid Grid.Row="5">
+            <Grid Grid.Row="4">
                 <Border  Style="{StaticResource LeftBorderDivider}">
                     <Label Content="Języki obce"
                    Style="{StaticResource LeftLabelDivider}"/>
                 </Border>
             </Grid>
 
-            <Grid Grid.Row="6" Margin="20 20 20 20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="5" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                <StackPanel Orientation="Vertical">
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="Język angielski"/>
-                    <Label Style="{StaticResource LeftColumnDetails}"
-                       Content="Język niemiecki"/>
+                <StackPanel Style="{StaticResource LeftSideStackPanelDetails}">
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Język Angielski B2 " Tag="4" Margin="5" />
+                    <ContentControl Template="{StaticResource SkillRatingTemplate}"
+                        Content="Język Włoski A2 " Tag="2" Margin="5" />
                 </StackPanel>
-
-                <StackPanel Grid.Column="1"
-                            Orientation="Vertical">
-                    <Canvas Margin="0 ">
-                        <StackPanel Orientation="Horizontal"
-                                        Margin="5 11">
-                            <Ellipse Width="8" Height="8"
-                                         Fill="White" 
-                                         Margin="2 0"/>
-                            <Ellipse Width="8" Height="8" 
-                                         Fill="White" 
-                                         Margin="2 0"/>
-                            <Ellipse Width="8" Height="8" 
-                                         Fill="White" 
-                                         Margin="2 0"/>
-                            <Ellipse Width="8" Height="8" 
-                                         Fill="White" 
-                                         Margin="2 0"/>
-                            <Ellipse Width="8" Height="8" 
-                                         Fill="#353535" 
-                                         Margin="2 0"/>
-                        </StackPanel>
-                        <Canvas Margin="0,33 ">
-                            <StackPanel Orientation="Horizontal"
-                                    Margin="5 11">
-                                <Ellipse Width="8" Height="8"
-                                     Fill="White" 
-                                     Margin="2 0"/>
-                                <Ellipse Width="8" Height="8" 
-                                     Fill="White" 
-                                     Margin="2 0"/>
-                                <Ellipse Width="8" Height="8" 
-                                     Fill="White" 
-                                     Margin="2 0"/>
-                                <Ellipse Width="8" Height="8" 
-                                     Fill="White" 
-                                     Margin="2 0"/>
-                                <Ellipse Width="8" Height="8" 
-                                     Fill="#353535" 
-                                     Margin="2 0"/>
-                            </StackPanel>
-                        </Canvas>
-                    </Canvas>
-                </StackPanel>
-                <Label Grid.ColumnSpan="2"
-                    Content="Made by PrzemyDev 2024 with WPF" FontStyle="Italic"
-                    Foreground="White" VerticalAlignment="Bottom"/>
+                <Label Grid.ColumnSpan="2" Grid.Row="2"
+                    Content="Made by PrzemyDev with C# WPF" FontStyle="Italic"
+                    Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
             </Grid>
         </Grid>
 
-        <!--Prawa kolumna:
-        50 HEADER, -->
-        <Grid Grid.Column="1">
+
+        <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="232"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="Auto"/>
+
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="52"/>
             </Grid.RowDefinitions>
 
 
-            <Grid Background="#202020">
-                <StackPanel>
-                    <Label Foreground="White" FontSize="35"
-                       Content="John Doe"
-                       HorizontalAlignment="Center"/>
-                    <Canvas>
-                        <Rectangle Fill="White" 
-                                   Height="4"
-                                   Width="524"
-                                   Margin="10 0"
-                                   />
-                    </Canvas>
-                    <TextBlock Foreground="White" FontSize="16"
-                               TextWrapping="Wrap"
-                               Margin="10"
-                        Text="Lorem ipsum dolor sit amet,  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-                        />
+            <!--Doświadczenie-->
+            <Grid Grid.Row="0">
+                <Border BorderThickness="0 0 0 1.5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    BorderBrush="Black" 
+                    Margin="10,1">
+                    <!-- dodać styl #TODO - powtarzalność x3-->
+                    <Label Content="Doświadczenie"
+                    Style="{StaticResource RightLabelDivider}"/>
+                </Border>
+
+
+            </Grid>
+
+            <Grid Grid.Row="1" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="1" Content="2023.01 - obecnie" 
+                       Style="{StaticResource labelDateRange}"/>
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="NexInnovate"
+                   Style="{StaticResource textBlockLabelHeaders}"/>
+                    <TextBlock Text="Wieloetapowa współpraca na wielu płaszczyznach:"
+                            Style="{StaticResource textBlockLabelSubheader}" FontSize="12"/>
 
                 </StackPanel>
-            </Grid>
+                <StackPanel Grid.Column="1" Grid.Row="1">
+                    <TextBlock Text="• Programista - Umowa o pracę "
+             Style="{StaticResource textBlockLabelSubheader}" />
+                    <TextBlock Text="- Implementacja silnika gry Nex2 &#x0a;- Współpraca z zespołami Dev i testów &#x0a;- Refaktoryzacja kodu &#x0a;- Dbanie o dokumentację projektu &#x0a;- Analiza zgłoszeń błędów i tworzenie poprawek w kodzie"
+             Style="{StaticResource textBlockLabelDescription}" />
+                </StackPanel>
 
-            <!--Doświadczenie-->
-            <Grid Grid.Row="1">
-                <Label Content="Doświadczenie"
-                    Style="{StaticResource RightLabelDivider}"/>
-            </Grid>
 
-            <Grid Grid.Row="2" Margin="3">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Column="0" BorderThickness="1"
-                BorderBrush="black" >
-                    <Label Content="01.2023 - 04.2024"
+                <Label Grid.Row="2" Content="2022.06 - 2022.12"
+                        Style="{StaticResource labelDateRange}" />
+
+                <StackPanel Grid.Column="1" Grid.Row="2" >
+
+                    <TextBlock Text="• Młodszu Specjalista ds. Programowania - Umowa o pracę"
+                        Style="{StaticResource textBlockLabelSubheader}"/>
+                    <TextBlock Text="- Implementacja mechanik gry Xen4 &#x0a;- Tworzenie dokumentacji i współpraca z zespołem testerów"
+                     Style="{StaticResource textBlockLabelDescription}" />
+                </StackPanel>
+
+
+
+                <Label Grid.Row="3" Content="2019.06 - 2022.05"
                        Style="{StaticResource labelDateRange}" />
-                </Border>
-                <Border Grid.Column="1" BorderThickness="1"
-                BorderBrush="Black" >
-                    <StackPanel>
-                        <TextBlock Text="BigCorpWithGames"
-                   Style="{StaticResource textBlockLabelHeaders}"/>
-                        <TextBlock Text="Starszy programista"
-                            Style="{StaticResource textBlockLabelDescription}" />
-                        <TextBlock Text="• Projektowanie i wdrażanie podsystemów gier i symulacji &#x0a;• Utrzymanie i refaktoryzacja istniejącej bazy kodu &#x0a;• Wykonywanie małych optymalizacji &#x0a;• Debugowanie i naprawianie błędów &#x0a;• Współpraca w procesie planowania i szacowania"
+                <StackPanel Grid.Column="1" Grid.Row="3">
+
+                    <TextBlock Text="• Młodszy Programista - Umowa zlecenie"
+                            Style="{StaticResource textBlockLabelSubheader}"/>
+                    <TextBlock Text="- Zarządzanie witryną sieciową NexInnovate.xyz"
         Style="{StaticResource textBlockLabelDescription}" />
-                    </StackPanel>
-                </Border>
+                </StackPanel>
 
-                <Border Grid.Column="0" BorderThickness="1"
-                        BorderBrush="black" Grid.Row="1">
-                       <Label Content="01.2020 - 11.2022"
-                       Style="{StaticResource labelDateRange}" />
-                </Border>
-                <Border Grid.Column="1" BorderThickness="1"
-                    BorderBrush="Black" Grid.Row="1">
-                                <StackPanel>
-                                    <TextBlock Text="Massive Bit Warlord Games"
-                       Style="{StaticResource textBlockLabelHeaders}"/>
-                                    <TextBlock Text="Młodszy programista"
-                        Style="{StaticResource textBlockLabelDescription}"/>
-                        <TextBlock Text="• Debugowanie i naprawianie błędów &#x0a;• Implementacja Animacji i fizyki&#x0a;• Współpraca z zespołem QA"
-Style="{StaticResource textBlockLabelDescription}" />
-                    </StackPanel>
-                </Border>
+                <Label Grid.Row="4"
+                Content="2019.01 - 2019.05"
+                Style="{StaticResource labelDateRange}" />
 
-                <Border Grid.Column="0" BorderThickness="1"
-                        BorderBrush="black" Grid.Row="2">
-                    <Label Content="01.2019 - 12.2019"
-                           Style="{StaticResource labelDateRange}" />
-                </Border>
-                <Border Grid.Column="1" BorderThickness="1"
-                        BorderBrush="Black" Grid.Row="2">
-                    <StackPanel>
-                        <TextBlock Text="Biznesowe rozwiązania S.A."
-                           Style="{StaticResource textBlockLabelHeaders}"/>
-                        <TextBlock Text="Młodszy specjalista ds. kontroli jakości"
-                            Style="{StaticResource textBlockLabelDescription}"/>
-                    </StackPanel>
-                </Border>
-                
+
+                <StackPanel Grid.Column="1" Grid.Row="4">
+
+                    <TextBlock Text="• Młodszy Tester - Staż"
+            Style="{StaticResource textBlockLabelSubheader}"/>
+                    <TextBlock Text="- Tworzenie i utrzymywanie testów automatycznych" Style="{StaticResource textBlockLabelDescription}"/>
+
+                </StackPanel>
+
+                <Label  Grid.Row="6" Content="2018.01 - 2018.03"
+                        Style="{StaticResource labelDateRange}" />
+
+
+                <StackPanel Grid.Column="1" Grid.Row="5">
+                    <TextBlock Text="CyberPol"
+           Style="{StaticResource textBlockLabelHeaders}"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="6">
+                    <TextBlock Text="• Młodszy programista - praktyka zawodowa" Style="{StaticResource textBlockLabelSubheader}"/>
+                    <TextBlock Text="- Implementacja modułów płatności w systemie internetowy-płatnik" Style="{StaticResource textBlockLabelDescription}"/>
+                </StackPanel>
+
+
             </Grid>
             <!--Wykształcenie-->
-            <Grid Grid.Row="3">
-                <Label Content="Wykształcenie"
-                   Style="{StaticResource RightLabelDivider}"/>
+            <Grid Grid.Row="2">
+                <Border BorderThickness="0 0 0 1.5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    BorderBrush="Black" 
+                    Margin="10,1">
+                    <Label Content="Wykształcenie"
+                Style="{StaticResource RightLabelDivider}" />
+                </Border>
             </Grid>
 
-            <Grid Grid.Row="4" Margin="3">
+            <Grid Grid.Row="3" >
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="140"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -360,98 +437,62 @@ Style="{StaticResource textBlockLabelDescription}" />
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Border Grid.Column="0" BorderThickness="1"
-                        BorderBrush="black">
-                    <Label Content="xx.xxxx - xx.xxxx"
-                           Style="{StaticResource labelDateRange}" />
-                </Border>
+                <Label Content="201x.xx - 202x.xx"
+                           Style="{StaticResource labelDateRange}"/>
 
-                <Border Grid.Column="1" BorderThickness="1"
-                        BorderBrush="Black">
-                    <StackPanel>
-                        <TextBlock Text ="Wyższa Szkoła Informatyki"
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text ="Wyższa Szkoła Informatyki"
                            Style="{StaticResource textBlockLabelHeaders}"/>
-                        <TextBlock Text="Informatyka, Programowanie" TextWrapping="Wrap"
+                    <TextBlock Text="Informatyka Programowanie - Inżynier" TextWrapping="Wrap"
                            Style="{StaticResource textBlockLabelDescription}"/>
-                    </StackPanel>
-                </Border>
+                </StackPanel>
 
-                <Border Grid.Column="0" Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="Black">
-                    <Label Content="xx.xxxx - xx.xxxx" 
+
+
+
+
+                <Label Grid.Row="2" Content="201x.xx - 201x.xx"
                            Style="{StaticResource labelDateRange}"/>
-                </Border>
 
-                <Border Grid.Column="1" Grid.Row="1"
-                        BorderThickness="1"
-                        BorderBrush="Black">
-                    <StackPanel>
-                        <TextBlock Text="Technikum "
-                          Style="{StaticResource textBlockLabelHeaders}"/>
-                        <TextBlock Text="Technik informatyk"
-                           TextWrapping="Wrap" Style="{StaticResource textBlockLabelDescription}"/>
-                    </StackPanel>
-                </Border>
 
-                <Border Grid.Column="0" Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="Black">
-                    <Label Content="xx.xxxx - xx.xxxx"
-                           Style="{StaticResource labelDateRange}"/>
-                </Border>
-                <Border Grid.Column="1" Grid.Row="2"
-                        BorderThickness="1"
-                        BorderBrush="Black">
-                    <StackPanel>
-                        <TextBlock Text="Szkoła"
+                <StackPanel Grid.Column="1" Grid.Row="2">
+                    <TextBlock Text="Technikum informatyczne"
                             Style="{StaticResource textBlockLabelHeaders}"/>
-                        <TextBlock Text="Uczeń" 
+                    <TextBlock Text="Technik T15, T16" 
                              Style="{StaticResource textBlockLabelDescription}"/>
-                    </StackPanel>
-                </Border>
+                </StackPanel>
             </Grid>
 
             <!--Certyfikaty-->
+            <Grid Grid.Row="4">
+                <Border BorderThickness="0 0 0 1.5"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    BorderBrush="Black" 
+                    Margin="10,1">
+                    <Label Content="Certyfikaty"
+                   Style="{StaticResource RightLabelDivider}"/>
+                </Border>
+            </Grid>
+
             <Grid Grid.Row="5">
-                <Label Content="Certyfikaty"
-                   Style="{StaticResource RightLabelDivider}"/>
-            </Grid>
-
-            <Grid Grid.Row="6">
-                <StackPanel >
+                <StackPanel Margin="0,0, 0,0">
                     <TextBlock Style="{StaticResource tblockCert}"
-                        Text=" • Graphic designer VCC 1111 "/>
+                        Text=" • Godot course J.Wang Certificate"/>
                     <TextBlock Style="{StaticResource tblockCert}"
-                        Text=" • Microsoft 51021ITA" />
+                        Text=" • C# advanced beginers F4k3-c0ur5e "/>
                     <TextBlock Style="{StaticResource tblockCert}"
-                        Text=" • Kurs testera AB-CDE123" />
-                        
+                        Text=" • Playwright for all - p1, p2, p3 "/>
                 </StackPanel>
             </Grid>
 
-            <!--Zainteresowania-->
-
-            <Grid Grid.Row="7">
-                <Label Content="Zainteresowania"
-                   Style="{StaticResource RightLabelDivider}"/>
-            </Grid>
-
-            <Grid Grid.Row="8">
-                <StackPanel >
-                    <TextBlock FontSize="14"
-                               TextWrapping="Wrap"
-                               Margin="10"
-                        Text="• GameDev i wszelkie nowinki technologiczne" />
-                </StackPanel>
-            </Grid>
-            
             <!--Klauzula-->
-            <Grid Grid.Row="9">
+            <Grid Grid.Row="6">
                 <Border BorderBrush="black" 
-                        BorderThickness="0 0.7 0 0"/>
-                <TextBlock TextWrapping="Wrap" Margin="2 0"
-                           FontSize="9.5" FontWeight="Bold" TextAlignment="Justify"
+                        BorderThickness="0 0.2 0 0"
+                        Margin="2,0"/>
+                <TextBlock TextWrapping="Wrap" Margin="2 0" 
+                           FontSize="9" FontWeight="Bold" TextAlignment="Justify"
                     Text="Wyrażam zgodę na przetwarzanie moich danych osobowych dla potrzeb niezbędnych do realizacji procesu rekrutacji zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (RODO)."/>
             </Grid>
         </Grid>
