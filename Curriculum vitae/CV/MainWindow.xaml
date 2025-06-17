@@ -245,7 +245,7 @@
                 </Border>
             </Grid>
             <Grid Grid.Row="3">
-                <StackPanel>
+                <StackPanel Style="{StaticResource LeftSideStackPanelDetails}">
                     <Label Content="🔧 Testowanie" Style="{StaticResource LeftColumnDetails}"
                            FontWeight="Medium"/>
                     <ContentControl Template="{StaticResource SkillRatingTemplate}"
