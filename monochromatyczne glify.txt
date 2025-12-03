@@ -1,0 +1,67 @@
+1. Symbole list / punktorów (kropki, kwadraty)
+•  Bullet
+▪  Small Square
+▫  Small White Square
+■  Black Square
+□  White Square
+●  Black Circle
+○  White Circle
+◆  Black Diamond
+◇  White Diamond
+‣  Triangular Bullet
+◦  Ring Bullet
+
+2. Strzałki
+Proste:
+→  Right Arrow
+←  Left Arrow
+↑  Up Arrow
+↓  Down Arrow
+↔  Left-Right Arrow
+↕  Up-Down Arrow
+
+Estetyczne / do CV:
+➔  Heavy Right Arrow
+➤  Black Arrowhead
+➧  Thin Chevron Arrow
+➜  Long Right Arrow
+➙  Right Arrow Head
+➛  Curved Right Arrow
+➝  Long Thin Arrow
+⟶  Mathematical Right Arrow
+
+3. Check / X / znaczniki
+✓  Check Mark
+✔  Heavy Check Mark
+✗  Ballot X
+✘  Heavy Ballot X
+
+4. Symbole kontaktowe, które NIE są emoji
+
+(ważne: te wyglądają dobrze jako tekst, nie są traktowane jako emoji)
+
+✉  Envelope (mail)
+☎  Telephone
+✆  Telephone Location
+⌂  House
+⌁  Graphic symbol
+⌕  Search symbol (lupa)
+
+5. Symbole CV / UI (estetyczne, lekkie)
+★  Black Star
+☆  White Star
+✦  Four Point Star
+✧  Sparkle Star
+⚑  Flag
+⚐  Flag Outline
+⧉  Overlapping Squares (dobry separator)
+✦  Deco Star
+
+6. Separator / typografia (świetne do CV)
+•   Middle Dot
+·   Dot
+—   Em Dash
+–   En Dash
+⋯   Midline Ellipsis
+⋮   Vertical Ellipsis
+⋯⋯  Double Ellipsis
