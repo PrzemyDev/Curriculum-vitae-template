@@ -246,13 +246,13 @@
             </Grid>
             <Grid Grid.Row="3">
                 <StackPanel Style="{StaticResource LeftSideStackPanelDetails}">
-                    <Label Content="🔧 Testowanie" Style="{StaticResource LeftColumnDetails}"
+                    <Label Content="- Testowanie" Style="{StaticResource LeftColumnDetails}"
                            FontWeight="Medium"/>
                     <ContentControl Template="{StaticResource SkillRatingTemplate}"
                         Content="Playwright" Tag="2" Margin="5" />
                     <ContentControl Template="{StaticResource SkillRatingTemplate}"
                         Content="Swagger UI" Tag="3" Margin="5" />
-                    <Label Content="💻 Programowanie" Style="{StaticResource LeftColumnDetails}"
+                    <Label Content="- Programowanie" Style="{StaticResource LeftColumnDetails}"
                            FontWeight="Medium"/>
                     <ContentControl Template="{StaticResource SkillRatingTemplate}"
                         Content="C#" Tag="5" Margin="5" />
@@ -262,7 +262,7 @@
                         Content="Xamarin Forms, .NET " Tag="3" Margin="5" />
                     <ContentControl Template="{StaticResource SkillRatingTemplate}"
                         Content="Godot" Tag="4" Margin="5" />
-                    <Label Content="🛠️ Narzędzia i inne" Style="{StaticResource LeftColumnDetails}"
+                    <Label Content="- Narzędzia i inne" Style="{StaticResource LeftColumnDetails}"
                            FontWeight="Medium"/>
                     <ContentControl Template="{StaticResource SkillRatingTemplate}"
                         Content="Microsoft Office" Tag="3" Margin="5" />
